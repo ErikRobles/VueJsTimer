@@ -1,11 +1,10 @@
 FROM node:current-alpine
-RUN mkdir /app
-COPY . /app
-RUN rm -f Dockerfile
-RUN rm -f node_modules
-
+RUN npm install -g http-server
 WORKDIR /app
+
+COPY package*.json ./
 RUN npm i
+COPY . .
 RUN npm run build-prod
 EXPOSE 8080
-CMD ["node", "dist"]
+CMD ["http-server", "dist"]

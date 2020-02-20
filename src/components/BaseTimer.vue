@@ -67,7 +67,11 @@ export default {
         { id: 2, value: 30, text: "30 Seconds" },
         { id: 3, value: 60, text: "1 Minute" },
         { id: 4, value: 120, text: "2 Minutes" },
-        { id: 5, value: 300, text: "5 Minutes" }
+        { id: 5, value: 300, text: "5 Minutes" },
+        { id: 6, value: 600, text: "10 Minutes" },
+        { id: 7, value: 900, text: "15 Minutes" },
+        { id: 8, value: 1800, text: "30 Minutes" },
+        { id: 9, value: 3600, text: "1 Hour" }
       ]
     };
   },

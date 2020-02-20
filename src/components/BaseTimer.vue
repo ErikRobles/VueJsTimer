@@ -23,6 +23,13 @@
       <option v-for="second in seconds" :value="second.value" v-bind:key="second.id">{{second.text}}</option>
     </select>
     <button id="start" class="button is-dark is-large" @click="startTimer">GO</button>
+    <div class="pause-or-kill">
+      <!--     Pause Timer -->
+      <button id="stop" class="button is-dark is-large" @click="pauseTimer">Pause</button>
+      <!--     Restart Timer -->
+      <button id="reset" class="button is-dark is-large" @click="restartTimer">Restart</button>
+      <button id="kill" class="button" @click="kill">Reset</button>
+    </div>
   </div>
 </template>
 
@@ -120,9 +127,23 @@ export default {
     onTimesUp() {
       clearInterval(this.timerInterval);
       audio.play();
+      setTimeout(function() {
+        location.reload();
+      }, 2000);
     },
     startTimer() {
       this.timerInterval = setInterval(() => (this.timePassed += 1), 1000);
+    },
+    restartTimer() {
+      clearInterval(this.timerInterval);
+      this.timerInterval = setInterval(() => (this.timePassed += 1), 1000);
+    },
+    pauseTimer() {
+      clearInterval(this.timerInterval);
+    },
+    kill() {
+      clearInterval(this.timerInterval);
+      location.reload();
     },
     selectedTime(event) {
       console.log(event.target.value);
@@ -209,5 +230,8 @@ button {
   -moz-box-shadow: 10px 10px 20px -8px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 20px -8px rgba(0, 0, 0, 0.75);
   outline: none;
+}
+.pause-or-kill {
+  margin-top: 20px;
 }
 </style>

@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <BaseTimer />
+    <!-- <PomodoroTimer /> -->
   </div>
 </template>
 
 <script>
 import BaseTimer from "./components/BaseTimer";
+// import PomodoroTimer from "./components/PomodoroTimer";
 
 export default {
   name: "App",
 
   components: {
     BaseTimer
+    // PomodoroTimer
   }
 };
 </script>

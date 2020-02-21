@@ -157,58 +157,50 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .base-timer {
   position: relative;
   width: 300px;
   height: 300px;
-
-  &__svg {
-    transform: scaleX(-1);
-  }
-
-  &__circle {
-    fill: none;
-    stroke: none;
-  }
-
-  &__path-elapsed {
-    stroke-width: 7px;
-    stroke: grey;
-  }
-
-  &__path-remaining {
-    stroke-width: 7px;
-    stroke-linecap: round;
-    transform: rotate(90deg);
-    transform-origin: center;
-    transition: 1s linear all;
-    fill-rule: nonzero;
-    stroke: currentColor;
-
-    &.green {
-      color: rgb(65, 184, 131);
-    }
-
-    &.orange {
-      color: orange;
-    }
-
-    &.red {
-      color: red;
-    }
-  }
-
-  &__label {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 48px;
-  }
+}
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: grey;
+}
+.base-timer__path-remaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+.base-timer__path-remaining.green {
+  color: #41b883;
+}
+.base-timer__path-remaining.orange {
+  color: orange;
+}
+.base-timer__path-remaining.red {
+  color: red;
+}
+.base-timer__label {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
 }
 
 select {
